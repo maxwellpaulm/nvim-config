@@ -1,19 +1,8 @@
 # Neovim from scratch
 
-**Update** When I initially created this repo I didn't anticipate the amount of breaking changes, if you'd like to use the same basic config as this one as a base I recommend my new repo: [nvim-basic-ide](https://github.com/LunarVim/nvim-basic-ide)
-
 **Another Update** This repo is updated to work with Neovim 0.8. All packages are pinned in `master` so it should remain stable. Branches will be updated eventually.
 
-Each video will be associated with a branch so checkout the one you are interested in, you can follow along with this [playlist](https://www.youtube.com/watch?v=ctH-a-1eUME&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ).
-
 ## Try out this config
-
-Make sure to remove or move your current `nvim` directory
-
-**IMPORTANT** Requires [Neovim v0.8.0](https://github.com/neovim/neovim/releases). Please [upgrade](#upgrade-to-latest-release) if you're on an earlier version. 
-```
-git clone https://github.com/LunarVim/Neovim-from-scratch.git ~/.config/nvim
-```
 
 Run `nvim` and wait for the plugins to be installed. (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim) 
 

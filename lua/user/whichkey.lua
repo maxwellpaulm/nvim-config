@@ -84,7 +84,7 @@ local mappings = {
     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Buffers",
   },
-  ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+  ["e"] = { "<cmd>NvimTreeFocus<cr>", "Explorer" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
@@ -95,6 +95,41 @@ local mappings = {
   },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+
+    d = {
+        name = "Display",
+        v = { "<cmd>vsplit<cr>", "Vertical Split" },
+        h = { "<cmd>split<cr>", "Horizontal Split" },
+    },
+
+    N = {
+        name = "NeoVim",
+        d = { "<cmd>LvimDocs<cr>", "View LunarVim's docs" },
+        c = { "<cmd>edit " .. os.getenv "HOME" .. "/.config/nvim<cr>", "Edit config.lua" },
+        f = { "<cmd>lua require('lvim.core.telescope.custom-finders').find_lunarvim_files()<cr>", "Find LunarVim files" },
+        g = { "<cmd>lua require('lvim.core.telescope.custom-finders').grep_lunarvim_files()<cr>", "Grep LunarVim files" },
+        k = { "<cmd>Telescope keymaps<cr>", "View keymappings" },
+        i = { "<cmd>lua require('lvim.core.info').toggle_popup(vim.bo.filetype)<cr>", "Toggle LunarVim Info" },
+        I = { "<cmd>lua require('lvim.core.telescope.custom-finders').view_lunarvim_changelog()<cr>", "View LunarVim's changelog" },
+        l = {
+            name = "+logs",
+            d = { "<cmd>lua require('lvim.core.terminal').toggle_log_view(require('lvim.core.log').get_path())<cr>", "view default log" },
+            D = { "<cmd>lua vim.fn.execute('edit ' .. require('lvim.core.log').get_path())<cr>", "Open the default logfile" },
+            l = { "<cmd>lua require('lvim.core.terminal').toggle_log_view(vim.lsp.get_log_path())<cr>", "view lsp log" },
+            L = { "<cmd>lua vim.fn.execute('edit ' .. vim.lsp.get_log_path())<cr>", "Open the LSP logfile" },
+            n = { "<cmd>lua require('lvim.core.terminal').toggle_log_view(os.getenv('NVIM_LOG_FILE'))<cr>", "view neovim log" },
+            N = { "<cmd>edit $NVIM_LOG_FILE<cr>", "Open the Neovim logfile" },
+            p = { "<cmd>lua require('lvim.core.terminal').toggle_log_view(get_cache_dir() .. '/packer.nvim.log')<cr>", "view packer log" },
+            P = { "<cmd>edit $LUNARVIM_CACHE_DIR/packer.nvim.log<cr>", "Open the Packer logfile" },
+        },
+        r = { "<cmd>LvimReload<cr>", "Reload LunarVim's configuration" },
+        u = { "<cmd>LvimUpdate<cr>", "Update LunarVim" },
+    },
+
+    o = {
+        name = "Open",
+        f = { "<cmd>Telescope file_browser<cr>", "File Browser" }
+    },
 
   p = {
     name = "Packer",
