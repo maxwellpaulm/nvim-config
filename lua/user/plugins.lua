@@ -83,10 +83,24 @@ return packer.startup(function(use)
     use { "nvim-telescope/telescope-file-browser.nvim" }
 
 	-- Treesitter
-	use { "nvim-treesitter/nvim-treesitter", commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac" }
-
+	-- use { "nvim-treesitter/nvim-treesitter", commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac" }
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,
+    }
 	-- Git
 	use { "lewis6991/gitsigns.nvim", commit = "2c6f96dda47e55fa07052ce2e2141e8367cbaaf2" }
+
+    -- DAP
+    use { "mfussenegger/nvim-dap" }
+    use { 'mfussenegger/nvim-dap-python' }
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    use { "folke/neodev.nvim" }
+
+    use { "github/copilot.vim" }
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

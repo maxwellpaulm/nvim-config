@@ -20,25 +20,33 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 -- Better window navigation
+keymap("n", "e", "<cmd>NvimTreeFocus<cr>", opts)
 keymap("n", "j", "h", opts)
 keymap("n", "k", "j", opts)
 keymap("n", "l", "k", opts)
 keymap("n", ";", "l", opts)
-keymap("n", "fk", ":lua vim.lsp.buf.definition()<CR>", opts)
-keymap("n", "fj", "<C-o>", opts)
-keymap("n", "f;", "<C-i>", opts)
+
+-- super navigation
 keymap("n", "sk", "<C-d>", opts)
 keymap("n", "sl", "<C-u>", opts)
 keymap("n", "s;", "$", opts)
 keymap("n", "sj", "^", opts)
 
+-- tab navigation --
+keymap("n", "fj", "<C-o>", opts)
+keymap("n", "f;", "<C-i>", opts)
+
+-- window navigation --
+keymap("n", "wj", "<C-w>h", opts)
+keymap("n", "wk", "<C-w>j", opts)
+keymap("n", "wl", "<C-w>k", opts)
+keymap("n", "w;", "<C-w>l", opts)
+
 keymap("v", "j", "h", opts)
 keymap("v", "k", "j", opts)
 keymap("v", "l", "k", opts)
 keymap("v", ";", "l", opts)
-keymap("v", "fk", ":lua vim.lsp.buf.definition()<CR>", opts)
-keymap("v", "fj", "<C-o>", opts)
-keymap("v", "f;", "<C-i>", opts)
+
 keymap("v", "sk", "<C-d>", opts)
 keymap("v", "sl", "<C-u>", opts)
 keymap("v", "s;", "$", opts)

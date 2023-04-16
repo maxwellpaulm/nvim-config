@@ -80,7 +80,6 @@ local opts = {
 
 local mappings = {
     ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-    ["b"] = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Buffers" },
     ["e"] = { "<cmd>NvimTreeFocus<cr>", "Explorer" },
     ["w"] = { "<cmd>w!<CR>", "Save" },
     ["q"] = { "<cmd>q!<CR>", "Quit" },
@@ -91,7 +90,14 @@ local mappings = {
     ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 
     d = {
-        name = "Display",
+        name = "Debugger",
+        o = { "<cmd>lua require('dapui').open()<cr>", "Open Debugger" },
+        c = { "<cmd>lua require('dapui').close()<cr>", "Close Debugger" },
+        t = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle Debugger"},
+    },
+
+    b = {
+        name = "Buffers",
         v = { "<cmd>vsplit<cr>", "Vertical Split" },
         h = { "<cmd>split<cr>", "Horizontal Split" },
     },
@@ -169,7 +175,8 @@ local mappings = {
   },
     s = {
         name = "Search",
-        b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+        b = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Buffers" },
+        g = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
         c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
         h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
         M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
