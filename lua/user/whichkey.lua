@@ -91,9 +91,25 @@ local mappings = {
 
     d = {
         name = "Debugger",
-        o = { "<cmd>lua require('dapui').open()<cr>", "Open Debugger" },
-        c = { "<cmd>lua require('dapui').close()<cr>", "Close Debugger" },
-        t = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle Debugger"},
+
+        -- DAP
+        t = { "<cmd>lua require('dap').toggle_breakpoint()<cr>", "Toggle Breakpoint" },
+        B = { "<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", "Set Breakpoint" },
+        c = { "<cmd>lua require('dap').continue()<cr>", "Continue" },
+        i = { "<cmd>lua require('dap').step_into()<cr>", "Step Into" },
+        o = { "<cmd>lua require('dap').step_over()<cr>", "Step Over" },
+        u = { "<cmd>lua require('dap').step_out()<cr>", "Step Out" },
+        r = { "<cmd>lua require('dap').repl.open()<cr>", "Open REPL" },
+        R = { "<cmd>lua require('dap').repl.run_last()<cr>", "Run Last REPL" },
+        s = { "<cmd>lua require('dap').continue()<cr>", "Start" },
+
+        -- DAP UI
+        g = {
+            name = "GUI",
+            o = { "<cmd>lua require('dapui').open()<cr>", "Open Debugger UI" },
+            c = { "<cmd>lua require('dapui').close()<cr>", "Close Debugger UI" },
+            t = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle Debugger UI"},
+        },
     },
 
     b = {
