@@ -84,13 +84,14 @@ return packer.startup(function(use)
 
 	-- Treesitter
 	-- use { "nvim-treesitter/nvim-treesitter", commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac" }
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-            ts_update()
-        end,
-    }
+    use { "nvim-treesitter/nvim-treesitter", run = ':TSUpdate' }
+    --use {
+    --    'nvim-treesitter/nvim-treesitter',
+    --    run = function()
+    --        local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+    --        ts_update()
+    --   end,
+    --}
 	-- Git
 	use { "lewis6991/gitsigns.nvim", commit = "2c6f96dda47e55fa07052ce2e2141e8367cbaaf2" }
 

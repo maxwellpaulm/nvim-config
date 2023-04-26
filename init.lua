@@ -1,4 +1,4 @@
-require "user.neodev"
+-- require "user.neodev"
 require "user.options"
 require "user.keymaps"
 require "user.plugins"
