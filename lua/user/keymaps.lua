@@ -1,9 +1,12 @@
 local opts = { noremap = true, silent = true }
-
 local term_opts = { silent = true }
 
 -- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+local keymap = function(modes, orig, mapped, opts)
+    for m in modes:gmatch"." do
+        vim.api.nvim_set_keymap(m, orig, mapped, opts)
+    end
+end
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -18,19 +21,22 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Normal --
 -- Better window navigation
 keymap("n", "e", "<cmd>NvimTreeFocus<cr>", opts)
-keymap("n", "j", "h", opts)
-keymap("n", "k", "j", opts)
-keymap("n", "l", "k", opts)
-keymap("n", ";", "l", opts)
+keymap("n", "s", "m", opts)
+keymap("v", "s", "m", opts)
+
+-- normal navigation
+keymap("nv", "j", "h", opts)
+keymap("nv", "k", "j", opts)
+keymap("nv", "l", "k", opts)
+keymap("nv", ";", "l", opts)
 
 -- super navigation
-keymap("n", "sk", "<C-d>", opts)
-keymap("n", "sl", "<C-u>", opts)
-keymap("n", "s;", "$", opts)
-keymap("n", "sj", "^", opts)
+keymap("nv", "sk", "<C-d>", opts)
+keymap("nv", "sl", "<C-u>", opts)
+keymap("nv", "s;", "$", opts)
+keymap("nv", "sj", "^", opts)
 
 -- tab navigation --
 keymap("n", "fj", "<C-o>", opts)
@@ -41,16 +47,6 @@ keymap("n", "wj", "<C-w>h", opts)
 keymap("n", "wk", "<C-w>j", opts)
 keymap("n", "wl", "<C-w>k", opts)
 keymap("n", "w;", "<C-w>l", opts)
-
-keymap("v", "j", "h", opts)
-keymap("v", "k", "j", opts)
-keymap("v", "l", "k", opts)
-keymap("v", ";", "l", opts)
-
-keymap("v", "sk", "<C-d>", opts)
-keymap("v", "sl", "<C-u>", opts)
-keymap("v", "s;", "$", opts)
-keymap("v", "sj", "^", opts)
 
 keymap("n", "<C-j>", "<C-w>h", opts)
 keymap("n", "<C-k>", "<C-w>j", opts)
@@ -71,12 +67,10 @@ keymap("n", "<S-;>", ":bprevious<CR>", opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
--- Insert --
--- Press jk fast to exit insert mode 
+-- Press jk fast to exit insert mode
 keymap("i", "lk", "<ESC>", opts)
--- keymap("i", "kj", "<ESC>", opts)
+keymap("i", "kl", "<ESC>", opts)
 
--- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
@@ -86,7 +80,6 @@ keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
 
--- Visual Block --
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
@@ -99,4 +92,3 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-

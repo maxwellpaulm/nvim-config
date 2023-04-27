@@ -4,20 +4,28 @@ if not status_ok then
 end
 
 configs.setup({
-    ensure_installed = { 
-        "bash", 
-        "c", 
-        "javascript", 
-        "json", 
-        "lua", 
-        "python", 
-        "typescript", 
-        "tsx", 
-        "css", 
-        "rust", 
-        "java", 
-        "yaml", 
-        "markdown", 
+    ensure_installed = {
+        "bash",
+        "c",
+        "cpp",
+        "javascript",
+        "java",
+        "json",
+        "lua",
+        "python",
+        "typescript",
+        "tsx",
+        "css",
+        "rust",
+        "java",
+        "yaml",
+        "toml",
+        "html",
+        "sql",
+        "scala",
+        "make",
+        "haskell",
+        "markdown",
         "markdown_inline",
         "org"
     }, -- one of "all" or a list of languages
