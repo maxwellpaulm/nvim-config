@@ -1,4 +1,12 @@
 local dap = require('dap')
+
+get_python_path = function()
+    local handle = io.popen('which python')
+    local result = handle:read("*a")
+    handle:close()
+    return result:gsub('[\n\r]', '')
+end
+
 dap.adapters.python = function(cb, config)
   if config.request == 'attach' then
     ---@diagnostic disable-next-line: undefined-field
@@ -16,7 +24,7 @@ dap.adapters.python = function(cb, config)
   else
     cb({
       type = 'executable',
-      command = 'path/to/virtualenvs/debugpy/bin/python',
+      command = get_python_path(),
       args = { '-m', 'debugpy.adapter' },
       options = {
         source_filetype = 'python',

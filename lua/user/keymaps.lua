@@ -23,6 +23,8 @@ vim.g.maplocalleader = " "
 
 -- Better window navigation
 keymap("n", "e", "<cmd>NvimTreeFocus<cr>", opts)
+keymap("n", "s", "m", opts)
+keymap("v", "s", "m", opts)
 
 -- normal navigation
 keymap("nv", "j", "h", opts)

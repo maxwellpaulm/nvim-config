@@ -39,6 +39,7 @@ return packer.startup(function(use)
 	use { "wbthomason/packer.nvim" } -- Have packer manage itself
 	use { "nvim-lua/plenary.nvim" } -- Useful lua functions used by lots of plugins
 	use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
+	use { "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" }
 
 	-- DAP
 	use { "mfussenegger/nvim-dap" }
@@ -48,13 +49,20 @@ return packer.startup(function(use)
 
 	-- LSP
 	use { "neovim/nvim-lspconfig" }
+	use { "williamboman/mason.nvim" }
+	use { "williamboman/mason-lspconfig.nvim" }
+	use { "jose-elias-alvarez/null-ls.nvim" }
 	use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+	use { "lukas-reineke/indent-blankline.nvim" }
+	use { "RRethy/vim-illuminate" }
+	use { "folke/trouble.nvim" }
 
 	-- Navigation
 	use { "goolord/alpha-nvim" }
-	use { "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" }}
+	use { "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" }, commit = "9c97e6449b0b0269bd44e1fd4857184dfa57bb4c" }
 	use { "ahmedkhalf/project.nvim" }
 	use { "akinsho/toggleterm.nvim" }
+	use { "moll/vim-bbye" }
 
 	-- Search
 	use { "nvim-telescope/telescope.nvim", requires = {'nvim-lua/plenary.nvim'}}
@@ -65,8 +73,11 @@ return packer.startup(function(use)
     use { "lunarvim/darkplus.nvim" }
     use { "EdenEast/nightfox.nvim"}
 
-		-- Autocomplete Plugins
+	-- Autocomplete Plugins
     use { "github/copilot.vim" } -- Github Copilot
+
+	-- Orgmode
+	use { "nvim-orgmode/orgmode" }
 
 	-- Shortcuts
 	use {"folke/which-key.nvim" } -- Whichkey allows for leaderkey shortcuts
