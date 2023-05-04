@@ -26,32 +26,26 @@ keymap("n", "e", "<cmd>NvimTreeFocus<cr>", opts)
 keymap("n", "s", "m", opts)
 keymap("v", "s", "m", opts)
 
--- normal navigation
-keymap("nv", "j", "h", opts)
-keymap("nv", "k", "j", opts)
-keymap("nv", "l", "k", opts)
-keymap("nv", ";", "l", opts)
-
 -- super navigation
-keymap("nv", "sk", "<C-d>", opts)
-keymap("nv", "sl", "<C-u>", opts)
-keymap("nv", "s;", "$", opts)
-keymap("nv", "sj", "^", opts)
+keymap("nv", "sj", "<C-d>", opts)
+keymap("nv", "sk", "<C-u>", opts)
+keymap("nv", "sh", "$", opts)
+keymap("nv", "sl", "^", opts)
 
 -- tab navigation --
-keymap("n", "fj", "<C-o>", opts)
-keymap("n", "f;", "<C-i>", opts)
+keymap("n", "fh", "<C-o>", opts)
+keymap("n", "fl", "<C-i>", opts)
 
 -- window navigation --
-keymap("n", "wj", "<C-w>h", opts)
-keymap("n", "wk", "<C-w>j", opts)
-keymap("n", "wl", "<C-w>k", opts)
-keymap("n", "w;", "<C-w>l", opts)
+keymap("n", "wh", "<C-w>h", opts)
+keymap("n", "wj", "<C-w>j", opts)
+keymap("n", "wk", "<C-w>k", opts)
+keymap("n", "wl", "<C-w>l", opts)
 
-keymap("n", "<C-j>", "<C-w>h", opts)
-keymap("n", "<C-k>", "<C-w>j", opts)
-keymap("n", "<C-l>", "<C-w>k", opts)
-keymap("n", "<C-;>", "<C-w>l", opts)
+keymap("n", "<C-h>", "<C-w>h", opts)
+keymap("n", "<C-j>", "<C-w>j", opts)
+keymap("n", "<C-k>", "<C-w>k", opts)
+keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -60,16 +54,16 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-j>", ":bnext<CR>", opts)
-keymap("n", "<S-;>", ":bprevious<CR>", opts)
+keymap("n", "<S-h>", ":bnext<CR>", opts)
+keymap("n", "<S-l>", ":bprevious<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- Press jk fast to exit insert mode
-keymap("i", "lk", "<ESC>", opts)
-keymap("i", "kl", "<ESC>", opts)
+keymap("i", "jk", "<ESC>", opts)
+keymap("i", "kj", "<ESC>", opts)
 
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)

@@ -63,6 +63,7 @@ return packer.startup(function(use)
 	use { "ahmedkhalf/project.nvim" }
 	use { "akinsho/toggleterm.nvim" }
 	use { "moll/vim-bbye" }
+	use { "nvim-lualine/lualine.nvim" }
 
 	-- Search
 	use { "nvim-telescope/telescope.nvim", requires = {'nvim-lua/plenary.nvim'}}
