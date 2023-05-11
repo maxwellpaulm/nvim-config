@@ -47,6 +47,22 @@ return packer.startup(function(use)
 	use { "rcarriga/nvim-dap-ui" }
 	use { "ldelossa/nvim-dap-projects" }
 
+    use {
+        "numToStr/Comment.nvim",
+        config = function()
+            require('Comment').setup()
+        end
+    }
+	-- Programing
+--	  {
+--    		"numToStr/Comment.nvim",
+--    		config = function()
+--      			require("lvim.core.comment").setup()
+--    		end,
+--    		keys = { { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
+--    		event = "User FileOpened",
+--  	}
+
 	-- LSP
 	use { "neovim/nvim-lspconfig" }
 	use { "williamboman/mason.nvim" }
