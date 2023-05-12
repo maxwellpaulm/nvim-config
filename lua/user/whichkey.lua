@@ -86,13 +86,17 @@ local mappings = {
     ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
     ["f"] = {"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find files" },
     ["g"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Grep Project" },
-    ["e"] = { "<cmd>NvimTreeToggle<CR>", "Toggle NvimTree" },
     ["v"] = { "<cmd>vsplit<cr>", "Vertical Split" },
+
+    e = {
+        name = "NvimTree Explorer",
+        e = { "<cmd>NvimTreeFocus<cr>", "Focus NvimTree" },
+        t = { "<cmd>NvimTreeToggle<cr>", "Toggle NvimTree" },
+        f = { "<cmd>NvimTreeFindFile<cr>", "Find Current File" },
+    },
 
     d = {
         name = "Debugger",
-
-        -- DAP
         t = { "<cmd>lua require('dap').toggle_breakpoint()<cr>", "Toggle Breakpoint" },
         B = { "<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", "Set Breakpoint" },
         c = { "<cmd>lua require('dap').continue()<cr>", "Continue" },
@@ -103,7 +107,6 @@ local mappings = {
         R = { "<cmd>lua require('dap').repl.run_last()<cr>", "Run Last REPL" },
         s = { "<cmd>lua require('dap').continue()<cr>", "Start" },
 
-        -- DAP UI
         g = {
             name = "GUI",
             o = { "<cmd>lua require('dapui').open()<cr>", "Open Debugger UI" },
@@ -113,26 +116,11 @@ local mappings = {
     },
 
     N = {
-        name = "NeoVim",
+       name = "NeoVim",
         c = { "<cmd>edit " .. os.getenv "HOME" .. "/.config/nvim<cr>", "Edit config.lua" },
-        f = { "<cmd>lua require('lvim.core.telescope.custom-finders').find_lunarvim_files()<cr>", "Find LunarVim files" },
-        g = { "<cmd>lua require('lvim.core.telescope.custom-finders').grep_lunarvim_files()<cr>", "Grep LunarVim files" },
+        a = { "<cmd>ASToggle<CR>", "Toggle Autosave" },
         k = { "<cmd>Telescope keymaps<cr>", "View keymappings" },
-        i = { "<cmd>lua require('lvim.core.info').toggle_popup(vim.bo.filetype)<cr>", "Toggle LunarVim Info" },
-        I = { "<cmd>lua require('lvim.core.telescope.custom-finders').view_lunarvim_changelog()<cr>", "View LunarVim's changelog" },
-        l = {
-            name = "+logs",
-            d = { "<cmd>lua require('lvim.core.terminal').toggle_log_view(require('lvim.core.log').get_path())<cr>", "view default log" },
-            D = { "<cmd>lua vim.fn.execute('edit ' .. require('lvim.core.log').get_path())<cr>", "Open the default logfile" },
-            l = { "<cmd>lua require('lvim.core.terminal').toggle_log_view(vim.lsp.get_log_path())<cr>", "view lsp log" },
-            L = { "<cmd>lua vim.fn.execute('edit ' .. vim.lsp.get_log_path())<cr>", "Open the LSP logfile" },
-            n = { "<cmd>lua require('lvim.core.terminal').toggle_log_view(os.getenv('NVIM_LOG_FILE'))<cr>", "view neovim log" },
-            N = { "<cmd>edit $NVIM_LOG_FILE<cr>", "Open the Neovim logfile" },
-            p = { "<cmd>lua require('lvim.core.terminal').toggle_log_view(get_cache_dir() .. '/packer.nvim.log')<cr>", "view packer log" },
-            P = { "<cmd>edit $LUNARVIM_CACHE_DIR/packer.nvim.log<cr>", "Open the Packer logfile" },
-        },
-        r = { "<cmd>LvimReload<cr>", "Reload LunarVim's configuration" },
-        u = { "<cmd>LvimUpdate<cr>", "Update LunarVim" },
+        r = { "<cmd>UserReload<cr>", "Reload configuration" },
         p = {
             name = "Packer",
             c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -182,6 +170,16 @@ local mappings = {
         f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
         h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
         v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+    },
+
+    x = {
+        name = "Trouble",
+        t = { "<cmd>TroubleToggle<cr>", "Trouble" },
+        w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics" },
+        d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics" },
+        l = { "<cmd>TroubleToggle loclist<cr>", "Loclist" },
+        q = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix" },
+        r = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
     },
 }
 

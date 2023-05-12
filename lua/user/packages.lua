@@ -47,12 +47,8 @@ return packer.startup(function(use)
 	use { "rcarriga/nvim-dap-ui" }
 	use { "ldelossa/nvim-dap-projects" }
 
-    use {
-        "numToStr/Comment.nvim",
-        config = function()
-            require('Comment').setup()
-        end
-    }
+    use { "numToStr/Comment.nvim" }
+    use { "Pocco81/auto-save.nvim" }
 	-- Programing
 --	  {
 --    		"numToStr/Comment.nvim",

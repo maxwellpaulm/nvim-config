@@ -22,7 +22,6 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Better window navigation
-keymap("n", "e", "<cmd>NvimTreeFocus<cr>", opts)
 keymap("n", "s", "m", opts)
 keymap("v", "s", "m", opts)
 
@@ -38,20 +37,11 @@ keymap("nv", "sl", "<C-u>", opts)
 keymap("nv", "s;", "$", opts)
 keymap("nv", "sj", "^", opts)
 
--- tab navigation --
-keymap("n", "fj", "<C-o>", opts)
-keymap("n", "f;", "<C-i>", opts)
-
--- window navigation --
-keymap("n", "wj", "<C-w>h", opts)
-keymap("n", "wk", "<C-w>j", opts)
-keymap("n", "wl", "<C-w>k", opts)
-keymap("n", "w;", "<C-w>l", opts)
-
-keymap("n", "<C-j>", "<C-w>h", opts)
-keymap("n", "<C-k>", "<C-w>j", opts)
-keymap("n", "<C-l>", "<C-w>k", opts)
-keymap("n", "<C-;>", "<C-w>l", opts)
+-- tab and window navigation --
+keymap("n", "fk", ":bprev<cr>", opts)
+keymap("n", "fl", ":bnext<cr>", opts)
+keymap("n", "fj", "<C-w>h", opts)
+keymap("n", "f;", "<C-w>l", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -68,8 +58,8 @@ keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- Press jk fast to exit insert mode
-keymap("i", "lk", "<ESC>", opts)
-keymap("i", "kl", "<ESC>", opts)
+keymap("iv", "lk", "<ESC>", opts)
+keymap("iv", "kl", "<ESC>", opts)
 
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)

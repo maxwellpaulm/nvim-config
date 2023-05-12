@@ -33,7 +33,7 @@ vim.g.indent_blankline_context_patterns = {
 	"^object",
 	"^table",
 	"block",
-	"arguments",
+"arguments",
 	"if_statement",
 	"else_clause",
 	"jsx_element",
