@@ -49,17 +49,8 @@ return packer.startup(function(use)
 
     use { "numToStr/Comment.nvim" }
     use { "Pocco81/auto-save.nvim" }
-	-- Programing
---	  {
---    		"numToStr/Comment.nvim",
---    		config = function()
---      			require("lvim.core.comment").setup()
---    		end,
---    		keys = { { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
---    		event = "User FileOpened",
---  	}
 
-	-- LSP
+    -- LSP
 	use { "neovim/nvim-lspconfig" }
 	use { "williamboman/mason.nvim" }
 	use { "williamboman/mason-lspconfig.nvim" }
@@ -75,6 +66,7 @@ return packer.startup(function(use)
 	use { "ahmedkhalf/project.nvim" }
 	use { "akinsho/toggleterm.nvim" }
 	use { "moll/vim-bbye" }
+    use { "nvim-lualine/lualine.nvim", requires = { 'nvim-tree/nvim-web-devicons', opt = true } }
 
 	-- Search
 	use { "nvim-telescope/telescope.nvim", requires = {'nvim-lua/plenary.nvim'}}
@@ -84,9 +76,17 @@ return packer.startup(function(use)
     use { "folke/tokyonight.nvim" }
     use { "lunarvim/darkplus.nvim" }
     use { "EdenEast/nightfox.nvim"}
+    use { "sainnhe/sonokai" }
+    use { "sainnhe/gruvbox-material" }
+    use { "sainnhe/edge" }
+    use { "sainnhe/everforest" }
+    use { "navarasu/onedark.nvim" }
+	use { "marko-cerovac/material.nvim" }
+	use { "shaunsingh/nord.nvim" }
 
 	-- Autocomplete Plugins
     use { "github/copilot.vim" } -- Github Copilot
+    use { "neoclide/coc.nvim", branch = 'release' } -- Coc
 
 	-- Orgmode
 	use { "nvim-orgmode/orgmode" }

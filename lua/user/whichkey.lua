@@ -80,20 +80,12 @@ local opts = {
 
 local mappings = {
     ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-    ["w"] = { "<cmd>w!<CR>", "Save" },
     ["q"] = { "<cmd>q!<CR>", "Quit" },
     ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
     ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
     ["f"] = {"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find files" },
     ["g"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Grep Project" },
-    ["v"] = { "<cmd>vsplit<cr>", "Vertical Split" },
-
-    e = {
-        name = "NvimTree Explorer",
-        e = { "<cmd>NvimTreeFocus<cr>", "Focus NvimTree" },
-        t = { "<cmd>NvimTreeToggle<cr>", "Toggle NvimTree" },
-        f = { "<cmd>NvimTreeFindFile<cr>", "Find Current File" },
-    },
+    ["w"] = { "<cmd>vsplit<cr>", "Split Window" },
 
     d = {
         name = "Debugger",
@@ -170,6 +162,18 @@ local mappings = {
         f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
         h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
         v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+    },
+
+    o = {
+        name = "Orgmode",
+        a = { "<cmd>lua require('orgmode').action('agenda')<cr>", "Agenda" },
+        c = { "<cmd>lua require('orgmode').action('capture')<cr>", "Capture" },
+        l = { "<cmd>lua require('orgmode').action('last')<cr>", "Last" },
+        L = { "<cmd>lua require('orgmode').action('log')<cr>", "Log" },
+        n = { "<cmd>lua require('orgmode').action('new')<cr>", "New" },
+        s = { "<cmd>lua require('orgmode').action('schedule')<cr>", "Schedule" },
+        t = { "<cmd>lua require('orgmode').action('todo')<cr>", "Todo" },
+        T = { "<cmd>lua require('orgmode').action('toggle')<cr>", "Toggle" },
     },
 
     x = {

@@ -42,6 +42,7 @@ keymap("n", "fk", ":bprev<cr>", opts)
 keymap("n", "fl", ":bnext<cr>", opts)
 keymap("n", "fj", "<C-w>h", opts)
 keymap("n", "f;", "<C-w>l", opts)
+keymap("n", "ff", "<cmd>NvimTreeFocus<cr>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
