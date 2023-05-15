@@ -34,8 +34,10 @@ keymap("nv", "s;", "$", opts)
 keymap("nv", "sj", "^", opts)
 
 -- tab and window navigation --
-keymap("n", "fk", ":bprev<cr>", opts)
-keymap("n", "fl", ":bnext<cr>", opts)
+-- keymap("n", "fk", ":bprev<cr>", opts)
+-- keymap("n", "fl", ":bnext<cr>", opts)
+keymap("n", "fk", ":BufferPrevious<cr>", opts)
+keymap("n", "fl", ":BufferNext<cr>", opts)
 keymap("n", "fj", "<C-w>h", opts)
 keymap("n", "f;", "<C-w>l", opts)
 keymap("n", "ff", "<cmd>NvimTreeFocus<cr>", opts)
@@ -47,8 +49,10 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-j>", ":bnext<CR>", opts)
-keymap("n", "<S-;>", ":bprevious<CR>", opts)
+-- keymap("n", "<S-j>", ":bnext<CR>", opts)
+-- keymap("n", "<S-;>", ":bprevious<CR>", opts)
+keymap("n", "<S-j>", ":BufferNext<CR>", opts)
+keymap("n", "<S-;>", ":BufferPrevious<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)

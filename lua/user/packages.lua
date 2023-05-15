@@ -39,7 +39,12 @@ return packer.startup(function(use)
 	use { "wbthomason/packer.nvim" } -- Have packer manage itself
 	use { "nvim-lua/plenary.nvim" } -- Useful lua functions used by lots of plugins
 	use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
-	use { "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" }
+	-- use { "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" }
+	-- use { "akinsho/bufferline.nvim", commit = "83bf4dc7bff642e145c8b4547aa596803a8b4dc4" }
+    use { "romgrk/barbar.nvim", requires = {
+        "lewis6991/gitsigns.nvim", -- OPTIONAL: for git status
+        "nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
+    }}
 
 	-- DAP
 	use { "mfussenegger/nvim-dap" }
