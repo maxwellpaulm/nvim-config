@@ -1,7 +1,6 @@
 require "user.packages"
 require "user.lsp"
 require "user.alpha"
--- require "user.bufferline" -- causing the problem
 require "user.barbar"
 require "user.coc"
 require "user.colorscheme"
