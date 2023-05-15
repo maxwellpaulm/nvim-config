@@ -21,10 +21,6 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Better window navigation
-keymap("n", "s", "m", opts)
-keymap("v", "s", "m", opts)
-
 -- normal navigation
 keymap("nv", "j", "h", opts)
 keymap("nv", "k", "j", opts)
@@ -59,8 +55,8 @@ keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- Press jk fast to exit insert mode
-keymap("iv", "lk", "<ESC>", opts)
-keymap("iv", "kl", "<ESC>", opts)
+keymap("i", "lk", "<ESC>", opts)
+keymap("i", "kl", "<ESC>", opts)
 
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
