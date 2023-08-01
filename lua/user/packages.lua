@@ -50,6 +50,7 @@ return packer.startup(function(use)
 	use { "rcarriga/nvim-dap-ui" }
 	use { "ldelossa/nvim-dap-projects" }
 
+    -- Quality of Life
     use { "numToStr/Comment.nvim" }
     use { "Pocco81/auto-save.nvim" }
 
@@ -90,9 +91,6 @@ return packer.startup(function(use)
 	-- Autocomplete Plugins
     use { "github/copilot.vim" } -- Github Copilot
     use { "neoclide/coc.nvim", branch = 'release' } -- Coc
-
-	-- Orgmode
-	use { "nvim-orgmode/orgmode" }
 
 	-- Shortcuts
 	use {"folke/which-key.nvim" } -- Whichkey allows for leaderkey shortcuts

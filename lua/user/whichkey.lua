@@ -98,13 +98,7 @@ local mappings = {
         r = { "<cmd>lua require('dap').repl.open()<cr>", "Open REPL" },
         R = { "<cmd>lua require('dap').repl.run_last()<cr>", "Run Last REPL" },
         s = { "<cmd>lua require('dap').continue()<cr>", "Start" },
-
-        g = {
-            name = "GUI",
-            o = { "<cmd>lua require('dapui').open()<cr>", "Open Debugger UI" },
-            c = { "<cmd>lua require('dapui').close()<cr>", "Close Debugger UI" },
-            t = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle Debugger UI"},
-        },
+        g = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle Debugger UI"},
     },
 
     N = {
@@ -162,18 +156,6 @@ local mappings = {
         f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
         h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
         v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
-    },
-
-    o = {
-        name = "Orgmode",
-        a = { "<cmd>lua require('orgmode').action('agenda')<cr>", "Agenda" },
-        c = { "<cmd>lua require('orgmode').action('capture')<cr>", "Capture" },
-        l = { "<cmd>lua require('orgmode').action('last')<cr>", "Last" },
-        L = { "<cmd>lua require('orgmode').action('log')<cr>", "Log" },
-        n = { "<cmd>lua require('orgmode').action('new')<cr>", "New" },
-        s = { "<cmd>lua require('orgmode').action('schedule')<cr>", "Schedule" },
-        t = { "<cmd>lua require('orgmode').action('todo')<cr>", "Todo" },
-        T = { "<cmd>lua require('orgmode').action('toggle')<cr>", "Toggle" },
     },
 
     x = {
