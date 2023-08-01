@@ -26,9 +26,7 @@ dap.adapters.python = function(cb, config)
       type = 'executable',
       command = get_python_path(),
       args = { '-m', 'debugpy.adapter' },
-      options = {
-        source_filetype = 'python',
-      },
+      options = { source_filetype = 'python' },
     })
   end
 end

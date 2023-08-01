@@ -1,4 +1,5 @@
 require('user.debug.project')
+require('user.debug.config')
 
 -- Language DAP install
 require('user.debug.lang.python')

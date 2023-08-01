@@ -99,7 +99,8 @@ local mappings = {
         R = { "<cmd>lua require('dap').repl.run_last()<cr>", "Run Last REPL" },
         s = { "<cmd>lua require('dap').continue()<cr>", "Start" },
         g = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle Debugger UI"},
-    },
+        C = { "<cmd>lua require('user.debug.config').toggle_debug_config()<cr>", "Open Config" },
+   },
 
     N = {
        name = "NeoVim",

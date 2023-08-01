@@ -41,6 +41,10 @@ keymap("n", "fl", ":BufferNext<cr>", opts)
 keymap("n", "fj", "<C-w>h", opts)
 keymap("n", "f;", "<C-w>l", opts)
 keymap("n", "ff", "<cmd>NvimTreeFocus<cr>", opts)
+keymap("n", "ft", "<cmd>NvimTreeToggle<cr>", opts)
+keymap("n", "fv", "<cmd>vsplit<cr>", opts)
+keymap("n", "fh", "<C-o>", opts)
+keymap("n", "hh", "<C-o>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
