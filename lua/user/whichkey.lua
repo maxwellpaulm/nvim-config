@@ -99,7 +99,8 @@ local mappings = {
         R = { "<cmd>lua require('dap').repl.run_last()<cr>", "Run Last REPL" },
         s = { "<cmd>lua require('dap').continue()<cr>", "Start" },
         g = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle Debugger UI"},
-        C = { "<cmd>lua require('user.debug.config').toggle_debug_config()<cr>", "Open Config" },
+        -- C = { "<cmd>lua require('user.debug.config').toggle_debug_config()<cr>", "Open Config" },
+        C = { "<cmd>lua require('telescope').extensions.debug_config.debug_config()<cr>", "Notifications" },
    },
 
     N = {
@@ -108,6 +109,7 @@ local mappings = {
         a = { "<cmd>ASToggle<CR>", "Toggle Autosave" },
         k = { "<cmd>Telescope keymaps<cr>", "View keymappings" },
         r = { "<cmd>UserReload<cr>", "Reload configuration" },
+        n = { "<cmd>lua require('telescope').extensions.notify.notify()<cr>", "Notifications" },
         p = {
             name = "Packer",
             c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -161,7 +163,7 @@ local mappings = {
 
     x = {
         name = "Trouble",
-        t = { "<cmd>TroubleToggle<cr>", "Trouble" },
+        x = { "<cmd>TroubleToggle<cr>", "Trouble" },
         w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics" },
         d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics" },
         l = { "<cmd>TroubleToggle loclist<cr>", "Loclist" },

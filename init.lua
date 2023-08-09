@@ -1,3 +1,4 @@
+vim.notify = require("notify")
 require "user.packages"
 require "user.lsp"
 require "user.alpha"
@@ -7,6 +8,7 @@ require "user.colorscheme"
 require "user.comment"
 require "user.illuminate"
 require "user.indentline"
+require "user.trouble"
 require "user.keymaps"
 require "user.lualine"
 require "user.nvim-tree"
@@ -17,3 +19,4 @@ require "user.telescope"
 require "user.treesitter"
 require "user.whichkey"
 require "user.debug"
+

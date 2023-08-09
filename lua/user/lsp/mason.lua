@@ -4,9 +4,10 @@ local servers = {
 	-- "html",
 	-- "tsserver",
 	"pyright",
-	-- "bashls",
+	"bashls",
 	"jsonls",
-	-- "yamlls",
+	"yamlls",
+    "clangd",
 }
 
 local settings = {
@@ -50,3 +51,14 @@ for _, server in pairs(servers) do
 
 	lspconfig[server].setup(opts)
 end
+
+-- local cmp_nvim_lsp = require "cmp_nvim_lsp"
+--
+-- require("lspconfig").clangd.setup {
+--   on_attach = on_attach,
+--   capabilities = cmp_nvim_lsp.default_capabilities(),
+--   cmd = {
+--     "clangd",
+--     "--offset-encoding=utf-16",
+--   },
+-- }

@@ -60,6 +60,7 @@ nvim_tree.setup {
                 { key = { ";", "<CR>", "o" }, cb = tree_cb "edit" },
                 { key = "j", cb = tree_cb "close_node" },
                 { key = "v", cb = tree_cb "vsplit" },
+                { key = "f", cb = tree_cb "edit" },
             },
         },
     },

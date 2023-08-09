@@ -49,10 +49,12 @@ return packer.startup(function(use)
 	use { "mfussenegger/nvim-dap-python" }
 	use { "rcarriga/nvim-dap-ui" }
 	use { "ldelossa/nvim-dap-projects" }
+    use { "puremourning/vimspector" }
 
     -- Quality of Life
     use { "numToStr/Comment.nvim" }
     use { "Pocco81/auto-save.nvim" }
+    use { "rcarriga/nvim-notify" }
 
     -- LSP
 	use { "neovim/nvim-lspconfig" }

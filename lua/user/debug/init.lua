@@ -1,4 +1,3 @@
-require('user.debug.project')
 require('user.debug.config')
 
 -- Language DAP install

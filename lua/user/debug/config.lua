@@ -1,14 +1,52 @@
-local M = {}
-local config_state = {}
-local config_window = nil
-local config_buffer = nil
-local curved = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
+if not pcall(require, "dap") then
+    vim.notify("[nvim-dap-projects] Could not find nvim-dap, make sure you load it before nvim-dap-projects.", "error")
+    return
+end
 
+
+local M = {}
+
+function scandir(directory)
+    local i, t, popen = 0, {}, io.popen
+    local pfile = popen('ls -a "'..directory..'"')
+    for filename in pfile:lines() do
+        if filename ~= "." and filename ~= ".." then
+            i = i + 1
+            t[i] = filename
+        end
+    end
+    pfile:close()
+    return t
+end
+
+function M.list_configs()
+    local project_configs = {}
+    local nvim_config_files = scandir("./.nvim")
+    for _, filename in ipairs(nvim_config_files) do
+        relative_path = "./.nvim/" .. filename
+        if string.find(relative_path, ".lua") == nil then goto continue end
+
+        local f = io.open(relative_path)
+        if f ~= nil then
+            f:close()
+
+            -- add the filename without the extension to the list of configs
+            project_configs[#project_configs+1] = require('string').sub(filename, 1, -5)
+        end
+        ::continue::
+    end
+
+    vim.notify("[nvim-dap-projects] Found " .. #project_configs .. " project configurations.", "debug")
+    return project_configs
+end
+
+vim.debug_config = {}
 
 function M._get_float_config(opts, opening)
-    local border = opts.border == "curved" and curved or opts.border or "single"
-    local width = math.ceil(math.min(vim.o.columns, math.max(80, vim.o.columns - 20)))
-    local height = math.ceil(math.min(vim.o.lines, math.max(20, vim.o.lines - 10)))
+    vim.api.nvim_set_hl(0,'TRed', {fg="#b52828"})
+    local border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
+    local width = math.ceil(math.min(vim.o.columns, math.max(80, vim.o.columns - 40)))
+    local height = math.ceil(math.min(vim.o.lines, math.max(20, vim.o.lines - 30)))
     local row = math.ceil(vim.o.lines - height) * 0.5 - 1
     local col = math.ceil(vim.o.columns - width) * 0.5 - 1
 
@@ -21,35 +59,44 @@ function M._get_float_config(opts, opening)
         height = height,
         border = opening and border or nil,
         zindex = opts.zindex or nil,
+        title = 'Debug Config',
+        title_pos = 'center',
     }
 end
 
 function M._open_window()
-    vim.notify("[nvim-debug-config] Opening the debug config windw", vim.log.levels.DEBUG, nil)
-    origin_window = vim.api.nvim_get_current_win()
-    config_buffer = vim.api.nvim_create_buf(false, true)
-    local opts = {border = "curved"}
-    local config_window = vim.api.nvim_open_win(config_buffer, true, M._get_float_config(opts, true))
-    vim.api.nvim_set_current_win(config_window)
-    vim.api.nvim_buf_set_text(config_buffer, 0, 0, 0, 0, {"test", "test"})
+    vim.debug_config.project_config_files = M.list_configs()
+    local config_buffer = vim.api.nvim_create_buf(false, true)
+    vim.debug_config.config_window = vim.api.nvim_open_win(config_buffer, true, M._get_float_config({}, true))
+    vim.api.nvim_set_current_win(vim.debug_config.config_window)
+    vim.api.nvim_buf_set_text(config_buffer, 0, 0, 0, 0, vim.debug_config.project_config_files)
 end
 
 function M._close_window()
-    vim.notify("[nvim-debug-config] Closing the debug config window", vim.log.levels.DEBUG, nil)
-    if origin_window and vim.api.nvim_win_is_valid(origin_window) then
-        vim.api.nvim_win_close(origin_window, true)
-        origin_window = nil
+    if vim.debug_config.config_window and vim.api.nvim_win_is_valid(vim.debug_config.config_window) then
+        vim.api.nvim_win_close(vim.debug_config.config_window, true)
+        vim.debug_config.config_window = nil
     end
 end
 
 function M.toggle_debug_config()
-    vim.notify("[nvim-debug-config] Opening the debug config", vim.log.levels.INFO, nil)
-    -- if origin_window and vim.api.nvim_win_is_valid(origin_window) then
-        -- M._close_window()
-    -- else
+    if vim.debug_config.config_window and vim.api.nvim_win_is_valid(vim.debug_config.config_window) then
+        M._close_window()
+    else
         M._open_window()
-    -- end
+    end
 end
+
+
+function M.select_config(config_name)
+    M._close_window()
+    vim.debug_config.selected_config_name = config_name
+    vim.notify("[nvim-dap-projects] Selected config: " .. config_name, "debug")
+    require('dap').adapters = (function() return {} end)()
+    require('dap').configurations = (function() return {} end)()
+    vim.cmd(":luafile ./.nvim/" .. config_name .. ".lua")
+end
+
 
 return M
 
