@@ -1,4 +1,3 @@
-vim.notify = require("notify")
 require "user.packages"
 require "user.lsp"
 require "user.alpha"

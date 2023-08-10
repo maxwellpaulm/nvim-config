@@ -54,7 +54,6 @@ return packer.startup(function(use)
     -- Quality of Life
     use { "numToStr/Comment.nvim" }
     use { "Pocco81/auto-save.nvim" }
-    use { "rcarriga/nvim-notify" }
 
     -- LSP
 	use { "neovim/nvim-lspconfig" }
