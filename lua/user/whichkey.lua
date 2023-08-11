@@ -102,6 +102,7 @@ local mappings = {
         u = { "<cmd>call vimspector#StepOut()<cr>", "Step Out" },
         S = { "<cmd>call vimspector#Stop()<cr>", "Stop" },
         r = { "<cmd>call vimspector#Restart()<cr>", "Restart" },
+        e = { "<cmd>VimspectorBalloonEval<cr>", "Eval" },
         x = { "<cmd>VimspectorReset<cr>", "Reset" },
    },
 
@@ -165,7 +166,7 @@ local mappings = {
 
     x = {
         name = "Trouble",
-        x = { "<cmd>TroubleToggle<cr>", "Trouble" },
+        x = { "<cmd>TroubleToggle document_diagnostics<cr>", "Trouble" },
         w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics" },
         d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics" },
         l = { "<cmd>TroubleToggle loclist<cr>", "Loclist" },

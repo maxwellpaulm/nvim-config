@@ -49,6 +49,8 @@ return packer.startup(function(use)
 	use { "mfussenegger/nvim-dap-python" }
 	use { "rcarriga/nvim-dap-ui" }
 	use { "ldelossa/nvim-dap-projects" }
+
+    -- https://github.com/puremourning/vimspector/commit/61fb528c592082029d2f927c503b0040236c81a6
     use { "puremourning/vimspector" }
 
     -- Quality of Life
