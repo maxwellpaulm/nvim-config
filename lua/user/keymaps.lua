@@ -41,8 +41,8 @@ keymap("n", "f;", "<C-w>l", opts)
 keymap("n", "ff", "<cmd>NvimTreeFocus<cr>", opts)
 keymap("n", "ft", "<cmd>NvimTreeToggle<cr>", opts)
 keymap("n", "fv", "<cmd>vsplit<cr>", opts)
-keymap("n", "fh", "<C-i>", opts)
-keymap("n", "hh", "<C-o>", opts)
+keymap("n", ",,", "<C-i>", opts)
+keymap("n", "mm", "<C-o>", opts)
 
 -- Resize with arrows
 keymap("n", "<S-Up>", ":resize -2<CR>", opts)
@@ -51,8 +51,8 @@ keymap("n", "<S-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<S-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-j>", ":BufferNext<CR>", opts)
-keymap("n", "<S-;>", ":BufferPrevious<CR>", opts)
+keymap("n", "vv", ":BufferNext<CR>", opts)
+keymap("n", "cc", ":BufferPrevious<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)

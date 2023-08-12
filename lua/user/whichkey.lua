@@ -81,11 +81,12 @@ local opts = {
 local mappings = {
     ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
     ["q"] = { "<cmd>q!<CR>", "Quit" },
+    ["Q"] = { "<cmd>qa!<CR>", "Quit All" },
     ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
     ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
     ["f"] = {"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find files" },
     ["g"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Grep Project" },
-    ["w"] = { "<cmd>vsplit<cr>", "Split Window" },
+    ["w"] = { "<cmd>vsplit<cr>", "Vertical Split Window" },
 
     d = {
         name = "Debugger",
