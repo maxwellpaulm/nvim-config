@@ -1,7 +1,7 @@
--- local colorscheme = "darkplus"
+local colorscheme = "darkplus"
 -- local colorscheme = "carbonfox"
 
-local colorscheme = "onedark"
+-- local colorscheme = "onedark"
 require('onedark').setup {style = 'warmer'}
 require('onedark').load()
 
