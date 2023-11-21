@@ -1,5 +1,4 @@
 require "user.packages"
-require "user.lsp"
 require "user.alpha"
 require "user.barbar"
 require "user.coc"
@@ -17,5 +16,4 @@ require "user.toggleterm"
 require "user.telescope"
 require "user.treesitter"
 require "user.whichkey"
-require "user.vimspector"
 

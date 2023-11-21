@@ -44,24 +44,11 @@ return packer.startup(function(use)
         "nvim-tree/nvim-web-devicons",
     }}
 
-	-- DAP
-	use { "mfussenegger/nvim-dap" }
-	use { "mfussenegger/nvim-dap-python" }
-	use { "rcarriga/nvim-dap-ui" }
-	use { "ldelossa/nvim-dap-projects" }
-
-    -- https://github.com/puremourning/vimspector/commit/61fb528c592082029d2f927c503b0040236c81a6
-    use { "puremourning/vimspector" }
-
     -- Quality of Life
     use { "numToStr/Comment.nvim" }
     use { "Pocco81/auto-save.nvim" }
 
     -- LSP
-	use { "neovim/nvim-lspconfig" }
-	use { "williamboman/mason.nvim" }
-	use { "williamboman/mason-lspconfig.nvim" }
-	use { "jose-elias-alvarez/null-ls.nvim" }
 	use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 	use { "lukas-reineke/indent-blankline.nvim" }
 	use { "RRethy/vim-illuminate" }
@@ -80,18 +67,8 @@ return packer.startup(function(use)
 	use { "nvim-telescope/telescope-file-browser.nvim", requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }}
 
 	-- Colorschemes
-    use { "folke/tokyonight.nvim" }
     use { "lunarvim/darkplus.nvim" }
     use { "EdenEast/nightfox.nvim"}
-    use { "sainnhe/sonokai" }
-    use { "sainnhe/gruvbox-material" }
-    use { "sainnhe/edge" }
-    use { "sainnhe/everforest" }
-    use { "navarasu/onedark.nvim" }
-	use { "marko-cerovac/material.nvim" }
-	use { "shaunsingh/nord.nvim" }
-    use { "mcchrish/zenbones.nvim" }
-    use { 'kartikp10/noctis.nvim', requires = { 'rktjmp/lush.nvim' } }
 
 	-- Autocomplete Plugins
     use { "github/copilot.vim" } -- Github Copilot
@@ -101,7 +78,6 @@ return packer.startup(function(use)
 	use {"folke/which-key.nvim" } -- Whichkey allows for leaderkey shortcuts
 
 	-- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
