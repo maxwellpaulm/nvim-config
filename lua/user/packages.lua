@@ -90,6 +90,8 @@ return packer.startup(function(use)
     use { "navarasu/onedark.nvim" }
 	use { "marko-cerovac/material.nvim" }
 	use { "shaunsingh/nord.nvim" }
+    use { "mcchrish/zenbones.nvim" }
+    use { 'kartikp10/noctis.nvim', requires = { 'rktjmp/lush.nvim' } }
 
 	-- Autocomplete Plugins
     use { "github/copilot.vim" } -- Github Copilot

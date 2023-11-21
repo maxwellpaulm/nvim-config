@@ -33,6 +33,10 @@ keymap("nv", "sl", "<C-u>", opts)
 keymap("nv", "s;", "$", opts)
 keymap("nv", "sj", "^", opts)
 
+-- delete shortcuts
+keymap("n", "d;", "d$", opts)
+keymap("n", "dj", "d^", opts)
+
 -- tab and window navigation --
 keymap("n", "cc", ":BufferPrevious<cr>", opts)
 keymap("n", "vv", ":BufferNext<cr>", opts)
