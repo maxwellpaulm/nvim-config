@@ -1,7 +1,6 @@
 require "user.packages"
 require "user.alpha"
 require "user.barbar"
-require "user.coc"
 require "user.colorscheme"
 require "user.comment"
 require "user.illuminate"

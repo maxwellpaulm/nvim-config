@@ -74,7 +74,6 @@ return packer.startup(function(use)
 
 	-- Autocomplete Plugins
     use { "github/copilot.vim" } -- Github Copilot
-    use { "neoclide/coc.nvim", branch = 'release' } -- Coc
 
 	-- Shortcuts
 	use {"folke/which-key.nvim" } -- Whichkey allows for leaderkey shortcuts
