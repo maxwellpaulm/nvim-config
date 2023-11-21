@@ -49,6 +49,9 @@ return packer.startup(function(use)
     use { "Pocco81/auto-save.nvim" }
 
     -- LSP
+	use {"williamboman/mason.nvim"}
+	use { "williamboman/mason-lspconfig.nvim" }
+
 	use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 	use { "lukas-reineke/indent-blankline.nvim" }
 	use { "RRethy/vim-illuminate" }
@@ -58,7 +61,6 @@ return packer.startup(function(use)
 	use { "goolord/alpha-nvim" }
 	use { "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" }, commit = "9c97e6449b0b0269bd44e1fd4857184dfa57bb4c" }
 	use { "ahmedkhalf/project.nvim" }
-	use { "akinsho/toggleterm.nvim" }
 	use { "moll/vim-bbye" }
     use { "nvim-lualine/lualine.nvim", requires = { 'nvim-tree/nvim-web-devicons', opt = true } }
 
