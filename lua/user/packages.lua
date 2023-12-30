@@ -78,6 +78,10 @@ return packer.startup(function(use)
 	-- Shortcuts
 	use {"folke/which-key.nvim" } -- Whichkey allows for leaderkey shortcuts
 
+    -- DAP
+    use {"mfussenegger/nvim-dap"} -- DAP API
+    use {"mfussenegger/nvim-dap-python"} -- Python Adapter
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
