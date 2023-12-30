@@ -49,8 +49,7 @@ return packer.startup(function(use)
     use { "Pocco81/auto-save.nvim" }
 
     -- LSP
-	use {"williamboman/mason.nvim"}
-	use { "williamboman/mason-lspconfig.nvim" }
+	use { "neoclide/coc.nvim", branch = "release"}
 
 	use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 	use { "lukas-reineke/indent-blankline.nvim" }

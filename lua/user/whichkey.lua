@@ -100,10 +100,10 @@ local mappings = {
         u = { "<cmd>DapStepOut<cr>", "Step Out" },
         t = { "<cmd>DapTerminate<cr>", "Terminate" },
         r = { "<cmd>DapToggleRepl<cr>", "Repl" },
-   },
+    },
 
     N = {
-       name = "NeoVim",
+        name = "NeoVim",
         k = { "<cmd>Telescope keymaps<cr>", "View keymappings" },
         r = { "<cmd>UserReload<cr>", "Reload configuration" },
         n = { "<cmd>lua require('telescope').extensions.notify.notify()<cr>", "Notifications" },

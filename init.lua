@@ -10,8 +10,16 @@ require "user.keymaps"
 require "user.lualine"
 require "user.nvim-tree"
 require "user.options"
+<<<<<<< HEAD
 require "user.project"
 require "user.telescope"
 require "user.treesitter"
 require "user.whichkey"
 require "user.dap"
+=======
+require "user.telescope"
+require "user.treesitter"
+require "user.whichkey"
+require "user.coc"
+
+>>>>>>> 366b617e2dbdc8ce002deff1415c3b2d158ae8c9
