@@ -18,6 +18,7 @@ configs.setup({
         "css",
         "rust",
         "java",
+	"kotlin",		
         "yaml",
         "toml",
         "html",
