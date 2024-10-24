@@ -38,8 +38,6 @@ keymap("n", "d;", "d$", opts)
 keymap("n", "dj", "d^", opts)
 
 -- tab and window navigation --
-keymap("n", "cc", ":BufferPrevious<cr>", opts)
-keymap("n", "vv", ":BufferNext<cr>", opts)
 keymap("n", "fj", "<C-w>h", opts)
 keymap("n", "f;", "<C-w>l", opts)
 keymap("n", "fk", "<C-w>k", opts)

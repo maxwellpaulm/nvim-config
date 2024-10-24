@@ -39,10 +39,6 @@ return packer.startup(function(use)
 	use { "wbthomason/packer.nvim" } -- Have packer manage itself
 	use { "nvim-lua/plenary.nvim" } -- Useful lua functions used by lots of plugins
 	use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
-    use { "romgrk/barbar.nvim", requires = {
-        "lewis6991/gitsigns.nvim",
-        "nvim-tree/nvim-web-devicons",
-    }}
 
     -- Quality of Life
     use { "numToStr/Comment.nvim" }
@@ -57,7 +53,6 @@ return packer.startup(function(use)
 	use { "folke/trouble.nvim" }
 
 	-- Navigation
-	use { "goolord/alpha-nvim" }
 	use { "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" }, commit = "9c97e6449b0b0269bd44e1fd4857184dfa57bb4c" }
 	use { "ahmedkhalf/project.nvim" }
 	use { "moll/vim-bbye" }
