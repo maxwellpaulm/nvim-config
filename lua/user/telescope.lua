@@ -55,8 +55,9 @@ telescope.setup {
                 ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
                 ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 
-                ["j"] = actions.move_selection_next,
-                ["k"] = actions.move_selection_previous,
+                -- Custom navigation to match j→h, k→j, l→k, ;→l layout
+                ["k"] = actions.move_selection_next,  -- k maps to j (down)
+                ["l"] = actions.move_selection_previous,  -- l maps to k (up)
                 ["H"] = actions.move_to_top,
                 ["M"] = actions.move_to_middle,
                 ["L"] = actions.move_to_bottom,

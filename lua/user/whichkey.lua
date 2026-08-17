@@ -43,11 +43,8 @@ which_key.add({
 
         { "<leader>N", group = "NeoVim" },
         { "<leader>Nk", "<cmd>Telescope keymaps<cr>", desc = "View keymappings" },
-        { "<leader>Np", group = "Packer" },
-        { "<leader>NpS", "<cmd>PackerStatus<cr>", desc = "Status" },
-        { "<leader>Npc", "<cmd>PackerCompile<cr>", desc = "Compile" },
-        { "<leader>Npi", "<cmd>PackerInstall<cr>", desc = "Install" },
-        { "<leader>Nps", "<cmd>PackerSync<cr>", desc = "Sync" },
+        { "<leader>Nl", "<cmd>Lazy<cr>", desc = "Lazy (plugins)" },
+        { "<leader>Nm", "<cmd>Mason<cr>", desc = "Mason (LSP servers)" },
 
         { "<leader>l", group = "LSP" },
         { "<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace Symbols" },

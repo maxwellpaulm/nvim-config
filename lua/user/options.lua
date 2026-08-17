@@ -1,3 +1,11 @@
+-- Disable unused providers
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+
+-- Set leader key BEFORE loading plugins/keymaps
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 local vim_options = {
     backup = false,                          -- creates a backup file
     clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
@@ -45,6 +53,4 @@ end
 vim.opt.shortmess:append "c"                           -- don't give |ins-completion-menu| messages
 vim.opt.iskeyword:append "-"                           -- hyphenated words recognized by searches
 vim.opt.formatoptions:remove({ "c", "r", "o" })        -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.
-vim.opt.listchars.extends = 'eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·'
-vim.opt.list = true
 
