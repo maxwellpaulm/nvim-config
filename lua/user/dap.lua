@@ -56,6 +56,27 @@ if status_ok_py then
     python.setup("~/.virtualenvs/debugpy/bin/python")
 end
 
+-- DAP Rust (codelldb, installed via mason)
+local codelldb = vim.fn.stdpath("data") .. "/mason/bin/codelldb"
+if vim.fn.executable(codelldb) == 1 then
+    dap.adapters.codelldb = {
+        type = "executable",
+        command = codelldb,
+    }
+    dap.configurations.rust = {
+        {
+            name = "Debug binary",
+            type = "codelldb",
+            request = "launch",
+            program = function()
+                return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
+            end,
+            cwd = "${workspaceFolder}",
+            stopOnEntry = false,
+        },
+    }
+end
+
 -- DAP Go (delve)
 -- https://github.com/leoluz/nvim-dap-go
 local status_ok_go, dap_go = pcall(require, "dap-go")
