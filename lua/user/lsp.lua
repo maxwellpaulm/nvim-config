@@ -62,6 +62,7 @@ vim.lsp.config("pyright", {
 mason_lspconfig.setup({
     ensure_installed = {
         "lua_ls",           -- Lua
+        "gopls",            -- Go
         "ts_ls",            -- TypeScript/JavaScript
         "pyright",          -- Python
         "rust_analyzer",    -- Rust

@@ -16,6 +16,8 @@ configs.setup({
         "typescript",
         "tsx",
         "css",
+        "go",
+        "gomod",
         "rust",
         "kotlin",
         "yaml",

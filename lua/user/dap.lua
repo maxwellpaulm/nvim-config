@@ -55,3 +55,17 @@ local status_ok_py, python = pcall(require, "dap-python")
 if status_ok_py then
     python.setup("~/.virtualenvs/debugpy/bin/python")
 end
+
+-- DAP Go (delve)
+-- https://github.com/leoluz/nvim-dap-go
+local status_ok_go, dap_go = pcall(require, "dap-go")
+if status_ok_go then
+    -- dlv lives in ~/go/bin, which is not always on PATH
+    local dlv = vim.fn.exepath("dlv")
+    if dlv == "" then
+        dlv = vim.fn.expand("~/go/bin/dlv")
+    end
+    dap_go.setup({
+        delve = { path = dlv },
+    })
+end
