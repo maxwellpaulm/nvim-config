@@ -88,6 +88,14 @@ which_key.add({
         { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
         { "<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Open Recent File" },
 
+        { "<leader>v", group = "Visual" },
+        { "<leader>vw", "<cmd>set list!<cr>", desc = "Toggle Whitespace" },
+        { "<leader>vi", "<cmd>IBLToggle<cr>", desc = "Toggle Indent Guides" },
+        { "<leader>vr", "<cmd>set relativenumber!<cr>", desc = "Toggle Relative Numbers" },
+        { "<leader>vp", "<cmd>set wrap!<cr>", desc = "Toggle Wrap" },
+        { "<leader>vs", "<cmd>set spell!<cr>", desc = "Toggle Spellcheck" },
+        { "<leader>vd", "<cmd>lua vim.diagnostic.enable(not vim.diagnostic.is_enabled())<cr>", desc = "Toggle Diagnostics" },
+
         { "<leader>x", group = "Trouble" },
         { "<leader>xd", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Document Diagnostics" },
         { "<leader>xl", "<cmd>Trouble loclist toggle<cr>", desc = "Loclist" },
