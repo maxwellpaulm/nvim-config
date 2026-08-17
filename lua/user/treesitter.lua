@@ -17,8 +17,7 @@ configs.setup({
         "tsx",
         "css",
         "rust",
-        "java",
-	"kotlin",		
+        "kotlin",
         "yaml",
         "toml",
         "html",
@@ -28,13 +27,11 @@ configs.setup({
         "haskell",
         "markdown",
         "markdown_inline",
-        "org"
     }, -- one of "all" or a list of languages
 	ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
 	highlight = {
 		enable = true, -- false will disable the whole extension
 		disable = { "css" }, -- list of language that will be disabled
-        additional_vim_regex_highlighting = {'org'}
 	},
 	autopairs = { enable = true },
 	indent = { enable = true, disable = { "python", "css" } },
