@@ -19,6 +19,7 @@ require "user.whichkey"
 require "user.autosave"
 require "user.dap"
 require "user.gitsigns"
+require "user.markdown"
 
 -- Load LSP and completion
 require "user.lsp"

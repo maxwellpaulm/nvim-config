@@ -63,12 +63,17 @@ require("lazy").setup({
     -- Debugging
     { "mfussenegger/nvim-dap" },
     { "mfussenegger/nvim-dap-python", dependencies = { "mfussenegger/nvim-dap" } },
+    { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
+    { "theHamsta/nvim-dap-virtual-text", dependencies = { "mfussenegger/nvim-dap" } },
 
     -- Treesitter
     -- Pinned to master: the main branch is a rewrite that drops the
     -- nvim-treesitter.configs module this config uses.
     { "nvim-treesitter/nvim-treesitter", branch = "master", build = ":TSUpdate" },
     { "lukas-reineke/indent-blankline.nvim", main = "ibl" },
+
+    -- Markdown
+    { "MeanderingProgrammer/render-markdown.nvim", dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" } },
 
     -- Navigation
     { "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },

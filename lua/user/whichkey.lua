@@ -40,6 +40,8 @@ which_key.add({
         { "<leader>ds", "<cmd>DapLoadLaunchJSON<cr>", desc = "Launch" },
         { "<leader>dt", "<cmd>DapTerminate<cr>", desc = "Terminate" },
         { "<leader>du", "<cmd>DapStepOut<cr>", desc = "Step Out" },
+        { "<leader>dU", "<cmd>lua require('dapui').toggle()<cr>", desc = "Toggle UI" },
+        { "<leader>de", "<cmd>lua require('dapui').eval()<cr>", desc = "Eval", mode = { "n", "v" } },
 
         { "<leader>N", group = "NeoVim" },
         { "<leader>Nk", "<cmd>Telescope keymaps<cr>", desc = "View keymappings" },
