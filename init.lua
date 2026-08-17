@@ -20,6 +20,7 @@ require "user.autosave"
 require "user.dap"
 require "user.gitsigns"
 require "user.markdown"
+require "user.pdf"
 
 -- Load LSP and completion
 require "user.lsp"

@@ -25,6 +25,7 @@ which_key.add({
         { "<leader>f", "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", desc = "Find files" },
         { "<leader>g", "<cmd>Telescope live_grep theme=ivy<cr>", desc = "Grep Project" },
         { "<leader>h", "<cmd>nohlsearch<cr>", desc = "No Highlight" },
+        { "<leader>o", "<cmd>silent !open '%:p'<cr>", desc = "Open in System App" },
         { "<leader>q", "<cmd>q!<cr>", desc = "Quit" },
         { "<leader>Q", "<cmd>qa!<cr>", desc = "Quit All" },
         { "<leader>w", "<cmd>vsplit<cr>", desc = "Vertical Split Window" },
