@@ -4,6 +4,14 @@ if not status_ok then
 end
 
 render_markdown.setup({
-    -- Render in normal mode, show raw markdown while editing the line
-    render_modes = { "n", "c", "t" },
+    heading = {
+        position = "inline", -- keep the heading text in place, icon in front
+        border = true,       -- blank line band above/below each heading
+    },
+    code = {
+        border = "thick",
+    },
+    pipe_table = {
+        preset = "round", -- rounded corners on table borders
+    },
 })
