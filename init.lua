@@ -41,3 +41,6 @@ vim.opt.foldlevel = 99        -- ensures everything starts unfolded
 vim.opt.foldcolumn = "1"      -- shows fold markers in the gutter
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+
+-- Restore persisted display toggles; must come after the defaults above
+require "user.persistence"

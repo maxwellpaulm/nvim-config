@@ -26,6 +26,14 @@ if status_ok_ui then
     end
 end
 
+-- Persist breakpoints across sessions (saved per project directory)
+local status_ok_pb, persistent_breakpoints = pcall(require, "persistent-breakpoints")
+if status_ok_pb then
+    persistent_breakpoints.setup({
+        load_breakpoints_event = { "BufReadPost" },
+    })
+end
+
 -- DAP Python
 -- https://github.com/mfussenegger/nvim-dap-python
 local status_ok_py, python = pcall(require, "dap-python")

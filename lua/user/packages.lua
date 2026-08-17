@@ -65,6 +65,7 @@ require("lazy").setup({
     { "mfussenegger/nvim-dap-python", dependencies = { "mfussenegger/nvim-dap" } },
     { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
     { "theHamsta/nvim-dap-virtual-text", dependencies = { "mfussenegger/nvim-dap" } },
+    { "Weissle/persistent-breakpoints.nvim", dependencies = { "mfussenegger/nvim-dap" } },
 
     -- Treesitter
     -- Pinned to master: the main branch is a rewrite that drops the
