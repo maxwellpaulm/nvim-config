@@ -65,10 +65,34 @@ if vim.fn.executable(codelldb) == 1 then
     }
     dap.configurations.rust = {
         {
-            name = "Debug binary",
+            name = "Debug binary (cargo build)",
             type = "codelldb",
             request = "launch",
+            -- Build and locate the crate binary relative to the current file,
+            -- so this works regardless of nvim's working directory
             program = function()
+                local dir = vim.fn.expand("%:p:h")
+                local build = vim.system({ "cargo", "build" }, { cwd = dir }):wait()
+                if build.code ~= 0 then
+                    vim.notify("cargo build failed:\n" .. (build.stderr or ""), vim.log.levels.ERROR)
+                    return dap.ABORT
+                end
+                local meta = vim.system({ "cargo", "metadata", "--format-version", "1", "--no-deps" }, { cwd = dir }):wait()
+                if meta.code == 0 then
+                    local ok, decoded = pcall(vim.json.decode, meta.stdout)
+                    if ok then
+                        for _, pkg in ipairs(decoded.packages or {}) do
+                            for _, target in ipairs(pkg.targets or {}) do
+                                if vim.tbl_contains(target.kind, "bin") then
+                                    local bin = decoded.target_directory .. "/debug/" .. target.name
+                                    if vim.fn.executable(bin) == 1 then
+                                        return bin
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
                 return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
             end,
             cwd = "${workspaceFolder}",
