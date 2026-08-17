@@ -50,7 +50,7 @@ end
 keymap("n", "cc", "<cmd>bprevious<cr>", opts)
 keymap("n", "vv", "<cmd>bnext<cr>", opts)
 keymap("n", "fj", "<C-o>", opts)
-keymap("n", "f;", "gd", opts)
+keymap("n", "f;", vim.lsp.buf.definition, opts)
 keymap("n", "fk", "<C-w>h", opts)
 keymap("n", "fl", "<C-w>l", opts)
 keymap("n", "ff", toggle_oil, opts)
