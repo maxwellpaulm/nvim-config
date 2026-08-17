@@ -79,6 +79,10 @@ require("lazy").setup({
     { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
     { "nvim-telescope/telescope-file-browser.nvim", dependencies = { "nvim-telescope/telescope.nvim" } },
 
+    -- Git
+    { "lewis6991/gitsigns.nvim" },
+    { "sindrets/diffview.nvim" },
+
     -- Colorschemes
     { "lunarvim/darkplus.nvim" },
     { "EdenEast/nightfox.nvim" },

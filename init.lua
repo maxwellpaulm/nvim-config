@@ -18,6 +18,7 @@ require "user.treesitter"
 require "user.whichkey"
 require "user.autosave"
 require "user.dap"
+require "user.gitsigns"
 
 -- Load LSP and completion
 require "user.lsp"
