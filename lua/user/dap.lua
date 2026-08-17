@@ -3,6 +3,21 @@ if not status_ok then
     return
 end
 
+-- Debug signs: highlight the executing line with a warm tone
+local function set_dap_highlights()
+    vim.api.nvim_set_hl(0, "DapStoppedLine", { bg = "#4a3f2a" })
+end
+set_dap_highlights()
+vim.api.nvim_create_autocmd("ColorScheme", {
+    group = vim.api.nvim_create_augroup("user_dap_highlights", { clear = true }),
+    callback = set_dap_highlights,
+})
+
+vim.fn.sign_define("DapStopped", { text = "", texthl = "DiagnosticSignWarn", linehl = "DapStoppedLine", numhl = "DiagnosticSignWarn" })
+vim.fn.sign_define("DapBreakpoint", { text = "●", texthl = "DiagnosticSignError" })
+vim.fn.sign_define("DapBreakpointCondition", { text = "◆", texthl = "DiagnosticSignError" })
+vim.fn.sign_define("DapBreakpointRejected", { text = "○", texthl = "DiagnosticSignHint" })
+
 -- Inline variable values while debugging
 local status_ok_vt, dap_virtual_text = pcall(require, "nvim-dap-virtual-text")
 if status_ok_vt then
